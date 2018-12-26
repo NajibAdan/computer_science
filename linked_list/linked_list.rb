@@ -15,10 +15,8 @@ class LinkedList
 
     #prepend adds a new node to the start of the list
     def prepend(node)
-        @current_node = @head
-        node = Node.new(node.data)
-        node.next = @current_node.next
-        @current_node.next = node
+        node.next = @head.next
+        @head.next = node
     end
 
     #append adds a new node to the end of the list
