@@ -20,7 +20,6 @@ class Tree
     def breadth_first_search(val)
         tracker = [@root]
         until tracker.empty?
-            #puts 'check'
             node = tracker.shift
             return "#{val} found at #{node}" if node.data == val
             tracker.push(node.left) if node.left
@@ -33,7 +32,6 @@ class Tree
         tracker = [@root]
         until tracker.empty?
             node = tracker.shift
-            #return nil if node.nil?
             return "#{val} found at #{node}" if node.data == val
             tracker.unshift(node.left) if node.left
             tracker.unshift(node.right) if node.right
