@@ -74,19 +74,14 @@ class LinkedList
     end
 
     #contains? returns true if the passed in value is in the list and otherwise returns false.
-    def contains?(val)
-        head
-        until @current_node.next == nil do
-            if @current_node.data == val
-                return true
-            end
-            self.next_node
-        end
-        return true if @current_node.data == val
+    def contains?(val,node=head)
+        return nil if node.next == nil
+        return true if node.data == val
+        return contains?(val,node.next)
     end
 
     #find(data) returns the index of the node containing data, or nil if not found.
-    def find(value)
+    def find(value,node=head)
         return 0 unless self.contains?(value)
         head
         loops = 0
